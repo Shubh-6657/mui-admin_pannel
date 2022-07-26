@@ -186,9 +186,20 @@ const Dashboard = () => {
             ))}
         </List>
       </Drawer>
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+      <Box
+        component="main"
+        sx={{ flexGrow: 1, height: '100%', background: '#fafafa' }}
+      >
         <DrawerHeader />
-        <DashboardRoutes />
+        <Box
+          sx={{
+            height: '100%',
+            overflowY: 'scroll',
+            padding: '0 1.5rem 1.5rem 1.5rem'
+          }}
+        >
+          <DashboardRoutes />
+        </Box>
       </Box>
     </Box>
   )
