@@ -16,7 +16,7 @@ import ListItemText from '@mui/material/ListItemText'
 import { drawerItems } from '../components/Drawer/drawerItems'
 import appLogo from '../assets/logo.svg'
 import DashboardRoutes from '../routes/DashboardRoutes'
-
+import { Grid } from '@mui/material'
 const drawerWidth = 240
 
 const openedMixin = (theme) => ({
@@ -195,10 +195,12 @@ const Dashboard = () => {
           sx={{
             height: '100%',
             overflowY: 'scroll',
-            padding: '0 1.5rem 1.5rem 1.5rem'
+            padding: '0 2rem 1.5rem 2rem'
           }}
         >
-          <DashboardRoutes />
+          <Grid container maxWidth={'lg'}>
+            <DashboardRoutes />
+          </Grid>
         </Box>
       </Box>
     </Box>
