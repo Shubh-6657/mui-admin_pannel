@@ -1,4 +1,4 @@
-import { Box, Grid, Paper, Typography } from '@mui/material'
+import { Box, Button, Grid, Paper, Typography } from '@mui/material'
 import { styled, useTheme } from '@mui/material/styles'
 import Table from '@mui/material/Table'
 import TableBody from '@mui/material/TableBody'
@@ -6,41 +6,16 @@ import TableCell, { tableCellClasses } from '@mui/material/TableCell'
 import TableContainer from '@mui/material/TableContainer'
 import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
+import { summaryItems, homeTableRows, homeShortcutItems } from '../../temp/home'
+import { BoxArrowUpRight, InfoCircle } from 'react-bootstrap-icons'
 
 const Home = () => {
   const theme = useTheme()
 
-  const summaryItems = [
-    {
-      title: 'Total Page Views',
-      value: '2,519,208',
-      percentageIncrease: '',
-      increasedBy: '17,523'
-    },
-    {
-      title: 'Total Users',
-      value: '78,250',
-      percentageIncrease: '',
-      increasedBy: '419'
-    },
-    {
-      title: 'Total Orders',
-      value: '18,800',
-      percentageIncrease: '',
-      increasedBy: '62'
-    },
-    {
-      title: 'Total Sales',
-      value: '$35,078',
-      percentageIncrease: '',
-      increasedBy: '$4,703'
-    }
-  ]
-
   const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
-      backgroundColor: theme.palette.common.black,
-      color: theme.palette.common.white
+      backgroundColor: theme.palette.common.white,
+      color: theme.palette.common.black
     },
     [`&.${tableCellClasses.body}`]: {
       fontSize: 14
@@ -51,30 +26,17 @@ const Home = () => {
     '&:nth-of-type(odd)': {
       backgroundColor: theme.palette.action.hover
     },
-    // hide last border
     '&:last-child td, &:last-child th': {
       border: 0
     }
   }))
-
-  function createData(name, calories, fat, carbs, protein) {
-    return { name, calories, fat, carbs, protein }
-  }
-
-  const rows = [
-    createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-    createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-    createData('Eclair', 262, 16.0, 24, 6.0),
-    createData('Cupcake', 305, 3.7, 67, 4.3),
-    createData('Gingerbread', 356, 16.0, 49, 3.9)
-  ]
 
   return (
     <>
       <Grid
         xs={12}
         style={{
-          borderBottom: '1px solid #eee',
+          borderBottom: '1px solid #eaeaea',
           padding: '1rem 0 1rem',
           marginBottom: '1.5rem'
         }}
@@ -91,8 +53,7 @@ const Home = () => {
                 <Box
                   sx={{
                     padding: 2,
-                    // border: '1px solid #eee',
-                    boxShadow: '0 2px 4px -3px #000',
+                    border: '1px solid #eaeaea',
                     backgroundColor: '#fff',
                     borderRadius: '4px'
                   }}
@@ -100,7 +61,7 @@ const Home = () => {
                   <Typography
                     variant="body2"
                     style={{
-                      color: '#888',
+                      color: '#999',
                       userSelect: 'none'
                     }}
                   >
@@ -112,7 +73,7 @@ const Home = () => {
                     fontWeight={'bold'}
                     style={{
                       userSelect: 'none',
-                      marginTop: '.5rem'
+                      marginTop: '.25rem'
                     }}
                   >
                     {item.value}
@@ -123,7 +84,7 @@ const Home = () => {
                     style={{
                       color: '#888',
                       userSelect: 'none',
-                      marginTop: '.5rem'
+                      marginTop: '.25rem'
                     }}
                   >
                     You've gained{' '}
@@ -140,7 +101,11 @@ const Home = () => {
       {/* ================================================= */}
       <Grid container spacing={3} style={{ marginTop: '1rem' }}>
         <Grid item xs={8}>
-          <TableContainer component={Paper}>
+          <TableContainer
+            component={Paper}
+            elevation={0}
+            style={{ border: '1px solid #eaeaea' }}
+          >
             <Table sx={{ minWidth: 700 }} aria-label="customized table">
               <TableHead>
                 <TableRow>
@@ -156,7 +121,7 @@ const Home = () => {
                 </TableRow>
               </TableHead>
               <TableBody>
-                {rows.map((row) => (
+                {homeTableRows.map((row) => (
                   <StyledTableRow key={row.name}>
                     <StyledTableCell component="th" scope="row">
                       {row.name}
@@ -179,8 +144,7 @@ const Home = () => {
           <Box
             sx={{
               padding: 2,
-              // border: '1px solid #eee',
-              boxShadow: '0 2px 4px -3px #000',
+              border: '1px solid #eaeaea',
               backgroundColor: '#fff',
               borderRadius: '4px'
             }}
@@ -222,92 +186,81 @@ const Home = () => {
       {/* ============================================= */}
 
       <Grid container spacing={3} style={{ marginTop: '1rem' }}>
-        <Grid item xs={6}>
-          <Box
-            sx={{
-              padding: 2,
-              // border: '1px solid #eee',
-              boxShadow: '0 2px 4px -3px #000',
-              backgroundColor: '#fff',
-              borderRadius: '4px'
-            }}
-          >
-            <Typography
-              variant="body2"
-              style={{
-                color: '#888',
-                userSelect: 'none'
-              }}
-            >
-              mooi
-            </Typography>
-            <Typography
-              noWrap
-              variant="h6"
-              fontWeight={'bold'}
-              style={{
-                userSelect: 'none',
-                marginTop: '.5rem'
-              }}
-            >
-              noice
-            </Typography>
-            <Typography
-              noWrap
-              variant="body2"
-              style={{
-                color: '#888',
-                userSelect: 'none',
-                marginTop: '.5rem'
-              }}
-            >
-              You've gained
-            </Typography>
-          </Box>
-        </Grid>
-        <Grid item xs={6}>
-          <Box
-            sx={{
-              padding: 2,
-              // border: '1px solid #eee',
-              boxShadow: '0 2px 4px -3px #000',
-              backgroundColor: '#fff',
-              borderRadius: '4px'
-            }}
-          >
-            <Typography
-              variant="body2"
-              style={{
-                color: '#888',
-                userSelect: 'none'
-              }}
-            >
-              mooi
-            </Typography>
-            <Typography
-              noWrap
-              variant="h6"
-              fontWeight={'bold'}
-              style={{
-                userSelect: 'none',
-                marginTop: '.5rem'
-              }}
-            >
-              noice
-            </Typography>
-            <Typography
-              noWrap
-              variant="body2"
-              style={{
-                color: '#888',
-                userSelect: 'none',
-                marginTop: '.5rem'
-              }}
-            >
-              You've gained
-            </Typography>
-          </Box>
-        </Grid>
+        {homeShortcutItems &&
+          homeShortcutItems.map((item, index) => {
+            return (
+              <Grid item xs={6} key={'helpful info' + index}>
+                <Box
+                  sx={{
+                    padding: 2,
+                    border: '1px solid #eaeaea',
+                    backgroundColor: '#fff',
+                    borderRadius: '4px'
+                  }}
+                >
+                  <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                    <Box
+                      sx={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        width: '1.5rem',
+                        heigth: '3rem',
+                        color: theme.palette.primary.main
+                      }}
+                    >
+                      {item.cardIcon}
+                    </Box>
+                    <Typography
+                      variant="subtitle1"
+                      style={{
+                        color: theme.palette.primary.main,
+                        userSelect: 'none'
+                      }}
+                    >
+                      {item.title}
+                    </Typography>
+                  </Box>
+                  <Typography
+                    noWrap
+                    variant="subtitle1"
+                    fontWeight={'bold'}
+                    style={{
+                      userSelect: 'none',
+                      marginTop: '.5rem'
+                    }}
+                  >
+                    {item.subtitle}
+                  </Typography>
+                  <Typography
+                    variant="subtitle2"
+                    style={{
+                      color: '#888',
+                      userSelect: 'none',
+                      marginTop: '.5rem'
+                    }}
+                  >
+                    {item.text}
+                  </Typography>
+                  <Box
+                    sx={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      marginTop: '1rem'
+                    }}
+                  >
+                    <Button
+                      variant="contained"
+                      disableElevation
+                      style={{ textTransform: 'none' }}
+                      endIcon={item.buttonIcon}
+                    >
+                      {item.buttonTitle}
+                    </Button>
+                  </Box>
+                </Box>
+              </Grid>
+            )
+          })}
       </Grid>
     </>
   )
