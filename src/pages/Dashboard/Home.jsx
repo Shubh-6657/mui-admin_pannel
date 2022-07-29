@@ -143,6 +143,7 @@ const Home = () => {
         <Grid item xs={4}>
           <Box
             sx={{
+              display: 'none',
               padding: 2,
               border: '1px solid #eaeaea',
               backgroundColor: '#fff',
