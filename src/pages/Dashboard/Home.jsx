@@ -15,6 +15,7 @@ import {
   VictoryAxis,
   VictoryStack
 } from 'victory'
+import PageTitle from '../../components/widgets/PageTitle'
 
 const Home = () => {
   const theme = useTheme()
@@ -79,18 +80,7 @@ const Home = () => {
 
   return (
     <>
-      <Box
-        style={{
-          width: '100%',
-          borderBottom: '1px solid #eaeaea',
-          padding: '1rem 0 1rem',
-          marginBottom: '1.5rem'
-        }}
-      >
-        <Typography variant="h6" style={{ userSelect: 'none' }}>
-          Welcome to your dashboard 👋
-        </Typography>
-      </Box>
+      <PageTitle title="Welcome to your dashboard 👋" />
       <Grid container spacing={3}>
         {summaryItems &&
           summaryItems.map((item, index) => {
@@ -234,20 +224,32 @@ const Home = () => {
                     borderRadius: '4px'
                   }}
                 >
-                  <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                    <Box
+                  <Box
+                    sx={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      verticalAlign: 'middle'
+                    }}
+                  >
+                    {/* <Box
                       sx={{
                         display: 'flex',
                         alignItems: 'center',
-                        width: '1.5rem',
-                        heigth: '3rem',
+                        width: '1rem',
+                        heigth: '1rem',
+                        marginRight: '.5rem',
                         color: theme.palette.primary.main
                       }}
                     >
                       {item.cardIcon}
-                    </Box>
+                    </Box> */}
+                    <div
+                      style={{
+                        verticalAlign: 'middle'
+                      }}
+                    ></div>
                     <Typography
-                      variant="subtitle1"
+                      variant="body"
                       style={{
                         color: theme.palette.primary.main,
                         userSelect: 'none'

@@ -17,6 +17,8 @@ import { drawerItems } from '../components/Drawer/drawerItems'
 import appLogo from '../assets/logo.svg'
 import DashboardRoutes from '../routes/DashboardRoutes'
 import { Grid } from '@mui/material'
+import { Link } from 'react-router-dom'
+
 const drawerWidth = 240
 
 const openedMixin = (theme) => ({
@@ -154,35 +156,37 @@ const Dashboard = () => {
         <List>
           {drawerItems &&
             drawerItems.map((item, index) => (
-              <ListItem
+              <Link
+                to={item.path}
                 key={`drawerItem${index}`}
-                disablePadding
-                sx={{ display: 'block' }}
+                style={{ color: 'inherit', textDecoration: 'inherit' }}
               >
-                <ListItemButton
-                  sx={{
-                    minHeight: 45,
-                    justifyContent: open ? 'initial' : 'center',
-                    px: 3
-                  }}
-                >
-                  <ListItemIcon
+                <ListItem disablePadding sx={{ display: 'block' }}>
+                  <ListItemButton
                     sx={{
-                      color: theme.palette.primary.main,
-                      minWidth: 0,
-                      mr: open ? 3 : 'auto',
-                      justifyContent: 'center'
+                      minHeight: 45,
+                      justifyContent: open ? 'initial' : 'center',
+                      px: 3
                     }}
                   >
-                    {item.icon}
-                  </ListItemIcon>
-                  <ListItemText
-                    primary={item.title}
-                    primaryTypographyProps={{ style: { fontSize: '0.9rem' } }}
-                    sx={{ opacity: open ? 1 : 0 }}
-                  />
-                </ListItemButton>
-              </ListItem>
+                    <ListItemIcon
+                      sx={{
+                        color: theme.palette.primary.main,
+                        minWidth: 0,
+                        mr: open ? 3 : 'auto',
+                        justifyContent: 'center'
+                      }}
+                    >
+                      {item.icon}
+                    </ListItemIcon>
+                    <ListItemText
+                      primary={item.title}
+                      primaryTypographyProps={{ style: { fontSize: '0.9rem' } }}
+                      sx={{ opacity: open ? 1 : 0 }}
+                    />
+                  </ListItemButton>
+                </ListItem>
+              </Link>
             ))}
         </List>
       </Drawer>

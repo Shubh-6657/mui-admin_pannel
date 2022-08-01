@@ -32,11 +32,11 @@ export const drawerItems = [
     path: '/Analytics',
     icon: <BarChartFill />
   },
-  {
-    title: 'Account',
-    path: '/account',
-    icon: <PersonCircle />
-  },
+  // {
+  //   title: 'Account',
+  //   path: '/account',
+  //   icon: <PersonCircle />
+  // },
   {
     title: 'About',
     path: '/about',
