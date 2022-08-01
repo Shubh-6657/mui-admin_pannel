@@ -4,7 +4,8 @@ import WorkInProgressImage from '../../components/widgets/WorkInProgressImage'
 const Forms = () => {
   return (
     <>
-      <PageTitle title="I doubt I'll ever use these 📈" />
+      {/* <PageTitle title="I doubt I'll ever use these 📈" /> */}
+      <PageTitle title="These pages are still work-in-progress 📈" />
       <WorkInProgressImage />
     </>
   )
