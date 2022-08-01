@@ -17,7 +17,7 @@ function App() {
     <ThemeProvider theme={muiBlueTheme}>
       <div className="App">
         <Routes>
-          <Route path="/" element={<Dashboard />} />
+          <Route path="*" element={<Dashboard />} />
           <Route path="auth" element={<Auth />} />
         </Routes>
       </div>

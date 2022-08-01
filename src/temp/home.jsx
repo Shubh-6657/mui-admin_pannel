@@ -5,16 +5,18 @@ import {
   ArrowRight
 } from 'react-bootstrap-icons'
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein }
+function createData(number, name, quantity, status, total) {
+  return { number, name, quantity, status, total }
 }
 
 export const homeTableRows = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9)
+  createData(192737, 'Camera Lens', 32, 'Approved', '98612.30'),
+  createData(273453, 'Keyboard', 15, 'Approved', '47500.00'),
+  createData(188736, 'Chair', 85, 'Pending', '103456.50'),
+  createData(103645, 'Headset', 7, 'Approved', '8200.99'),
+  createData(365168, 'Mouse', 12, 'Rejected', '16400.00'),
+  createData(423742, 'Desktop', 24, 'Pending', '21050.32'),
+  createData(983893, 'Computer Accessories', 61, 'Pending', '34640.00')
 ]
 
 export const summaryItems = [
@@ -38,9 +40,9 @@ export const summaryItems = [
   },
   {
     title: 'Total Sales',
-    value: '$35,078',
+    value: 'R35,078',
     percentageIncrease: '',
-    increasedBy: '$4,703'
+    increasedBy: 'R4,703'
   }
 ]
 

@@ -194,8 +194,8 @@ const Dashboard = () => {
         <Box
           sx={{
             height: '100%',
-            overflowY: 'scroll',
-            padding: '0 2rem 1.5rem 2rem'
+            // overflowY: 'scroll',
+            padding: '0 3rem 3rem 3rem'
           }}
         >
           <Grid container maxWidth={'lg'}>

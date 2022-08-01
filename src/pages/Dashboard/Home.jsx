@@ -8,11 +8,21 @@ import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
 import { summaryItems, homeTableRows, homeShortcutItems } from '../../temp/home'
 import { BoxArrowUpRight, InfoCircle } from 'react-bootstrap-icons'
+import {
+  VictoryBar,
+  VictoryChart,
+  VictoryTheme,
+  VictoryAxis,
+  VictoryStack
+} from 'victory'
 
 const Home = () => {
   const theme = useTheme()
 
   const StyledTableCell = styled(TableCell)(({ theme }) => ({
+    'td, th': {
+      borderColor: '#eaeaea'
+    },
     [`&.${tableCellClasses.head}`]: {
       backgroundColor: theme.palette.common.white,
       color: theme.palette.common.black
@@ -23,19 +33,55 @@ const Home = () => {
   }))
 
   const StyledTableRow = styled(TableRow)(({ theme }) => ({
-    '&:nth-of-type(odd)': {
-      backgroundColor: theme.palette.action.hover
+    'td, th': {
+      borderColor: '#eaeaea'
     },
     '&:last-child td, &:last-child th': {
       border: 0
     }
   }))
 
+  const data2012 = [
+    { month: 1, earnings: 13000 },
+    { month: 2, earnings: 16500 },
+    { month: 3, earnings: 14250 },
+    { month: 4, earnings: 19000 },
+    { month: 5, earnings: 8000 },
+    { month: 6, earnings: 21800 }
+  ]
+
+  const data2013 = [
+    { month: 1, earnings: 15000 },
+    { month: 2, earnings: 12500 },
+    { month: 3, earnings: 19500 },
+    { month: 4, earnings: 13000 },
+    { month: 5, earnings: 8000 },
+    { month: 6, earnings: 21800 }
+  ]
+
+  const data2014 = [
+    { month: 1, earnings: 11500 },
+    { month: 2, earnings: 13250 },
+    { month: 3, earnings: 20000 },
+    { month: 4, earnings: 15500 },
+    { month: 5, earnings: 21800 },
+    { month: 6, earnings: 6000 }
+  ]
+
+  const data2015 = [
+    { month: 1, earnings: 18000 },
+    { month: 2, earnings: 13250 },
+    { month: 3, earnings: 15000 },
+    { month: 4, earnings: 12000 },
+    { month: 5, earnings: 14000 },
+    { month: 6, earnings: 12000 }
+  ]
+
   return (
     <>
-      <Grid
-        xs={12}
+      <Box
         style={{
+          width: '100%',
           borderBottom: '1px solid #eaeaea',
           padding: '1rem 0 1rem',
           marginBottom: '1.5rem'
@@ -44,7 +90,7 @@ const Home = () => {
         <Typography variant="h6" style={{ userSelect: 'none' }}>
           Welcome to your dashboard 👋
         </Typography>
-      </Grid>
+      </Box>
       <Grid container spacing={3}>
         {summaryItems &&
           summaryItems.map((item, index) => {
@@ -109,30 +155,36 @@ const Home = () => {
             <Table sx={{ minWidth: 700 }} aria-label="customized table">
               <TableHead>
                 <TableRow>
-                  <StyledTableCell>Dessert (100g serving)</StyledTableCell>
-                  <StyledTableCell align="right">Calories</StyledTableCell>
-                  <StyledTableCell align="right">Fat&nbsp;(g)</StyledTableCell>
-                  <StyledTableCell align="right">
-                    Carbs&nbsp;(g)
+                  <StyledTableCell style={{ fontWeight: 'bold' }}>
+                    Tracking no.
                   </StyledTableCell>
-                  <StyledTableCell align="right">
-                    Protein&nbsp;(g)
+                  <StyledTableCell style={{ fontWeight: 'bold' }} align="left">
+                    Product
+                  </StyledTableCell>
+                  <StyledTableCell style={{ fontWeight: 'bold' }} align="right">
+                    Quantity
+                  </StyledTableCell>
+                  <StyledTableCell style={{ fontWeight: 'bold' }} align="left">
+                    Status
+                  </StyledTableCell>
+                  <StyledTableCell style={{ fontWeight: 'bold' }} align="right">
+                    Total Amount
                   </StyledTableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
                 {homeTableRows.map((row) => (
-                  <StyledTableRow key={row.name}>
+                  <StyledTableRow key={row.number}>
                     <StyledTableCell component="th" scope="row">
-                      {row.name}
+                      {row.number}
                     </StyledTableCell>
+                    <StyledTableCell align="left">{row.name}</StyledTableCell>
                     <StyledTableCell align="right">
-                      {row.calories}
+                      {row.quantity}
                     </StyledTableCell>
-                    <StyledTableCell align="right">{row.fat}</StyledTableCell>
-                    <StyledTableCell align="right">{row.carbs}</StyledTableCell>
+                    <StyledTableCell align="left">{row.status}</StyledTableCell>
                     <StyledTableCell align="right">
-                      {row.protein}
+                      R{row.total}
                     </StyledTableCell>
                   </StyledTableRow>
                 ))}
@@ -143,44 +195,27 @@ const Home = () => {
         <Grid item xs={4}>
           <Box
             sx={{
-              display: 'none',
               padding: 2,
               border: '1px solid #eaeaea',
               backgroundColor: '#fff',
               borderRadius: '4px'
             }}
           >
-            <Typography
-              variant="body2"
-              style={{
-                color: '#888',
-                userSelect: 'none'
-              }}
-            >
-              mooi
-            </Typography>
-            <Typography
-              noWrap
-              variant="h6"
-              fontWeight={'bold'}
-              style={{
-                userSelect: 'none',
-                marginTop: '.5rem'
-              }}
-            >
-              noice
-            </Typography>
-            <Typography
-              noWrap
-              variant="body2"
-              style={{
-                color: '#888',
-                userSelect: 'none',
-                marginTop: '.5rem'
-              }}
-            >
-              You've gained
-            </Typography>
+            <VictoryChart domainPadding={20} theme={VictoryTheme.material}>
+              <VictoryAxis
+                tickValues={[1, 2, 3, 4, 5, 6]}
+                tickFormat={['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June']}
+              />
+              <VictoryAxis dependentAxis tickFormat={(x) => `R${x / 1000}k`} />
+              <VictoryStack
+                colorScale={['#004080', '#0066CC', '#0080FF', '#4DA6FF']}
+              >
+                <VictoryBar data={data2012} x="month" y="earnings" />
+                <VictoryBar data={data2013} x="month" y="earnings" />
+                <VictoryBar data={data2014} x="month" y="earnings" />
+                <VictoryBar data={data2015} x="month" y="earnings" />
+              </VictoryStack>
+            </VictoryChart>
           </Box>
         </Grid>
       </Grid>
