@@ -14,5 +14,5 @@ A simple dashboard built to show the various Material UI components in action.
 - [React](https://reactjs.org/)
 - [Vite.js](https://vitejs.dev/)
 - [MUI](https://mui.com/)
-- [React Query](https://www.w3schools.com/css/css3_flexbox.asp)
+- [React Query](https://tanstack.com/query/v4)
 - [Victory](https://formidable.com/open-source/victory/)
