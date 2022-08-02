@@ -1,10 +1,4 @@
-# mui-dashboard
-
-A dashboard example using various MUI elements
-
 [![Project Banner](https://github.com/seezmash/readme-images/blob/main/mui-dashboard.png)](https://mui-dashboard.web.app/)
-
-# About this project
 
 A simple dashboard built to show the various Material UI components in action.
 [mui-dashboard.web.app](https://mui-dashboard.web.app/).
