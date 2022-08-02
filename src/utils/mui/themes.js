@@ -26,7 +26,19 @@ export const muiBlueTheme = createTheme({
       light: '#FF2919'
     }
   },
+  // shadows: ["none"],
   components: {
+    MuiButton: {
+      defaultProps: {
+        disableElevation: true
+        // disableRipple: true
+      },
+      styleOverrides: {
+        root: {
+          textTransform: 'none'
+        }
+      }
+    }
     // MuiPaper: {
     //   styleOverrides: {
     //     root: {

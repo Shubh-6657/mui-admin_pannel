@@ -98,12 +98,14 @@ const Dashboard = () => {
           >
             <MenuIcon />
           </IconButton>
-          <img
-            src={appLogo}
-            draggable={false}
-            style={{ width: '9rem', height: '2rem' }}
-            alt="app logo"
-          />
+          <Link to="/">
+            <img
+              src={appLogo}
+              draggable={false}
+              style={{ width: '9rem', height: '1.5rem' }}
+              alt="app logo"
+            />
+          </Link>
         </Toolbar>
       </AppBar>
       <Drawer

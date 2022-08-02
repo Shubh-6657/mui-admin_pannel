@@ -9,7 +9,8 @@ import {
   FormLabel,
   RadioGroup,
   Radio,
-  FormControlLabel
+  FormControlLabel,
+  Button
 } from '@mui/material'
 import PageTitle from '../../components/widgets/PageTitle'
 // import WorkInProgressImage from '../../components/widgets/WorkInProgressImage'
@@ -29,8 +30,7 @@ const Forms = () => {
   return (
     <>
       <LocalizationProvider dateAdapter={AdapterDateFns}>
-        {/* <PageTitle title="Simple forms to fill in 🖊️" /> */}
-        <PageTitle title="These pages are still work-in-progress 🖊️" />
+        <PageTitle title="Simple forms to fill in 🖊️" />
         <Grid container spacing={3}>
           <Grid item xs={6}>
             <Paper>
@@ -71,6 +71,7 @@ const Forms = () => {
                     required
                     size="small"
                     fullWidth
+                    type="email"
                     style={{ marginBottom: '.15rem' }}
                     placeholder="Enter email"
                     id="outlined-required"
@@ -93,13 +94,23 @@ const Forms = () => {
                     required
                     size="small"
                     fullWidth
+                    type="password"
                     style={{ marginBottom: '.15rem' }}
                     placeholder="Enter password"
                     id="outlined-required"
                   />
+                  <Typography
+                    variant="caption"
+                    style={{ marginTop: '1rem', color: '#999' }}
+                  >
+                    Please enter your password
+                  </Typography>
                 </div>
                 <FormControl>
-                  <FormLabel id="demo-radio-buttons-group-label">
+                  <FormLabel
+                    id="demo-radio-buttons-group-label"
+                    style={{ marginBottom: '.25rem' }}
+                  >
                     Language
                   </FormLabel>
                   <RadioGroup
@@ -127,12 +138,13 @@ const Forms = () => {
               </Box>
             </Paper>
           </Grid>
+          {/* ============================================================ */}
           <Grid item xs={6}>
             <Paper>
               <Box style={{ borderBottom: '1px solid #eaeaea' }}>
                 <div style={{ padding: '1rem' }}>Date and Time</div>
               </Box>
-              <Box component="form" style={{ padding: '1rem' }}>
+              <Box component="form" style={{ padding: '1rem 1rem 0 1rem' }}>
                 <div style={{ marginBottom: '1rem' }}>
                   <Typography
                     variant="subtitle2"
@@ -196,6 +208,156 @@ const Forms = () => {
                   />
                 </div>
               </Box>
+              <Box
+                display={'flex'}
+                justifyContent={'end'}
+                style={{ borderTop: '1px solid #eaeaea', padding: '1rem' }}
+              >
+                <Button variant="outlined" color="error">
+                  Cancel
+                </Button>
+                <Button variant="contained" style={{ marginLeft: '1rem' }}>
+                  Submit
+                </Button>
+              </Box>
+            </Paper>
+          </Grid>
+          {/* ============================================================ */}
+          <Grid item xs={12}>
+            <Paper>
+              <Box style={{ borderBottom: '1px solid #eaeaea' }}>
+                <div style={{ padding: '1rem' }}>Multi Column Form Layout</div>
+              </Box>
+              <Grid
+                component={'form'}
+                container
+                item
+                spacing={3}
+                style={{ padding: '1rem' }}
+              >
+                <Grid item xs={6}>
+                  <Typography
+                    variant="subtitle2"
+                    style={{ marginBottom: '.25rem' }}
+                  >
+                    Name
+                  </Typography>
+                  <TextField
+                    required
+                    size="small"
+                    fullWidth
+                    style={{ marginBottom: '.15rem' }}
+                    placeholder="Enter full name"
+                    id="outlined-required"
+                  />
+                  <Typography
+                    variant="caption"
+                    style={{ marginTop: '1rem', color: '#999' }}
+                  >
+                    Please enter your full name
+                  </Typography>
+                </Grid>
+                <Grid item xs={6}>
+                  <Typography
+                    variant="subtitle2"
+                    style={{ marginBottom: '.25rem' }}
+                  >
+                    Email
+                  </Typography>
+                  <TextField
+                    required
+                    size="small"
+                    fullWidth
+                    type="email"
+                    style={{ marginBottom: '.15rem' }}
+                    placeholder="Enter email"
+                    id="outlined-required"
+                  />
+                  <Typography
+                    variant="caption"
+                    style={{ marginTop: '1rem', color: '#999' }}
+                  >
+                    Please enter your email
+                  </Typography>
+                </Grid>
+                <Grid item xs={6}>
+                  <Typography
+                    variant="subtitle2"
+                    style={{ marginBottom: '.25rem' }}
+                  >
+                    Password
+                  </Typography>
+                  <TextField
+                    required
+                    size="small"
+                    fullWidth
+                    type="password"
+                    style={{ marginBottom: '.15rem' }}
+                    placeholder="Enter password"
+                    id="outlined-required"
+                  />
+                  <Typography
+                    variant="caption"
+                    style={{ marginTop: '1rem', color: '#999' }}
+                  >
+                    Please enter your password
+                  </Typography>
+                </Grid>
+                <Grid item xs={6}>
+                  <Typography
+                    variant="subtitle2"
+                    style={{ marginBottom: '.25rem' }}
+                  >
+                    Profile URL
+                  </Typography>
+                  <TextField
+                    required
+                    size="small"
+                    fullWidth
+                    style={{ marginBottom: '.15rem' }}
+                    placeholder="Enter profile URL"
+                    id="outlined-required"
+                  />
+                  <Typography
+                    variant="caption"
+                    style={{ marginTop: '1rem', color: '#999' }}
+                  >
+                    Please enter your profile URL
+                  </Typography>
+                </Grid>
+                <Grid item xs={6}>
+                  <FormControl>
+                    <FormLabel
+                      id="demo-radio-buttons-group-label"
+                      style={{ marginBottom: '.25rem' }}
+                    >
+                      Language
+                    </FormLabel>
+                    <RadioGroup
+                      row
+                      aria-labelledby="demo-radio-buttons-group-label"
+                      defaultValue="english"
+                      name="radio-buttons-group"
+                    >
+                      <FormControlLabel
+                        value="english"
+                        control={<Radio size="small" />}
+                        label="English"
+                      />
+                      <FormControlLabel
+                        value="french"
+                        control={<Radio size="small" />}
+                        label="French"
+                      />
+                      <FormControlLabel
+                        value="german"
+                        control={<Radio size="small" />}
+                        label="German"
+                      />
+                    </RadioGroup>
+                  </FormControl>
+                </Grid>
+              </Grid>
             </Paper>
           </Grid>
         </Grid>
