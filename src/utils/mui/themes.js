@@ -25,5 +25,15 @@ export const muiBlueTheme = createTheme({
       dark: '#BF1F13',
       light: '#FF2919'
     }
+  },
+  components: {
+    // MuiPaper: {
+    //   styleOverrides: {
+    //     root: {
+    //       boxShadow: 'none',
+    //       border: '1px solid #ddd'
+    //     }
+    //   }
+    // }
   }
 })

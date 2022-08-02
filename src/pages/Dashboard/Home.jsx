@@ -86,14 +86,7 @@ const Home = () => {
           summaryItems.map((item, index) => {
             return (
               <Grid item xs={3} key={'summary item ' + index}>
-                <Box
-                  sx={{
-                    padding: 2,
-                    border: '1px solid #eaeaea',
-                    backgroundColor: '#fff',
-                    borderRadius: '4px'
-                  }}
-                >
+                <Paper sx={{ padding: 2 }}>
                   <Typography
                     variant="body2"
                     style={{
@@ -129,7 +122,7 @@ const Home = () => {
                     </span>{' '}
                     this week
                   </Typography>
-                </Box>
+                </Paper>
               </Grid>
             )
           })}
@@ -137,11 +130,7 @@ const Home = () => {
       {/* ================================================= */}
       <Grid container spacing={3} style={{ marginTop: '1rem' }}>
         <Grid item xs={8}>
-          <TableContainer
-            component={Paper}
-            elevation={0}
-            style={{ border: '1px solid #eaeaea' }}
-          >
+          <TableContainer component={Paper}>
             <Table sx={{ minWidth: 700 }} aria-label="customized table">
               <TableHead>
                 <TableRow>
@@ -183,14 +172,7 @@ const Home = () => {
           </TableContainer>
         </Grid>
         <Grid item xs={4}>
-          <Box
-            sx={{
-              padding: 2,
-              border: '1px solid #eaeaea',
-              backgroundColor: '#fff',
-              borderRadius: '4px'
-            }}
-          >
+          <Paper sx={{ padding: 2 }}>
             <VictoryChart domainPadding={20} theme={VictoryTheme.material}>
               <VictoryAxis
                 tickValues={[1, 2, 3, 4, 5, 6]}
@@ -206,7 +188,7 @@ const Home = () => {
                 <VictoryBar data={data2015} x="month" y="earnings" />
               </VictoryStack>
             </VictoryChart>
-          </Box>
+          </Paper>
         </Grid>
       </Grid>
       {/* ============================================= */}
@@ -216,12 +198,9 @@ const Home = () => {
           homeShortcutItems.map((item, index) => {
             return (
               <Grid item xs={6} key={'helpful info' + index}>
-                <Box
+                <Paper
                   sx={{
-                    padding: 2,
-                    border: '1px solid #eaeaea',
-                    backgroundColor: '#fff',
-                    borderRadius: '4px'
+                    padding: 2
                   }}
                 >
                   <Box
@@ -295,7 +274,7 @@ const Home = () => {
                       {item.buttonTitle}
                     </Button>
                   </Box>
-                </Box>
+                </Paper>
               </Grid>
             )
           })}

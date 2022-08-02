@@ -1,7 +1,7 @@
 import PageTitle from '../../components/widgets/PageTitle'
 import WorkInProgressImage from '../../components/widgets/WorkInProgressImage'
 
-const Forms = () => {
+const Profile = () => {
   return (
     <>
       {/* <PageTitle title="This page is coming some day 😎" /> */}
@@ -11,4 +11,4 @@ const Forms = () => {
   )
 }
 
-export default Forms
+export default Profile

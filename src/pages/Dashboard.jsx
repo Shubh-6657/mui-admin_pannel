@@ -67,7 +67,7 @@ const Drawer = styled(MuiDrawer, {
 const Dashboard = () => {
   const theme = useTheme()
   const [open, setOpen] = useState(false)
-  const [currentUserTitle, setCurrentUserTitle] = useState('John Soap')
+  const [currentUserTitle, setCurrentUserTitle] = useState('Andrew Harrison')
 
   const toggleDrawerOpen = () => {
     setOpen(!open)
@@ -198,7 +198,6 @@ const Dashboard = () => {
         <Box
           sx={{
             height: '100%',
-            // overflowY: 'scroll',
             padding: '0 3rem 3rem 3rem'
           }}
         >

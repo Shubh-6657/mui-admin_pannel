@@ -7,6 +7,7 @@ import {
   PersonFill,
   HouseDoorFill,
   InfoCircleFill,
+  GearFill,
   List as ListIcon,
   PencilFill
 } from 'react-bootstrap-icons'
@@ -18,28 +19,33 @@ export const drawerItems = [
     icon: <HouseDoorFill />
   },
   {
-    title: 'Customers',
-    path: '/customers',
-    icon: <PeopleFill />
-  },
-  {
     title: 'Forms',
     path: '/forms',
     icon: <PencilFill />
   },
   {
-    title: 'Analytics',
-    path: '/Analytics',
+    title: 'Charts',
+    path: '/charts',
     icon: <BarChartFill />
   },
-  // {
-  //   title: 'Account',
-  //   path: '/account',
-  //   icon: <PersonCircle />
-  // },
   {
-    title: 'About',
-    path: '/about',
-    icon: <InfoCircleFill />
+    title: 'Customers',
+    path: '/customers',
+    icon: <PeopleFill />
+  },
+  {
+    title: 'Profile',
+    path: '/profile',
+    icon: <PersonCircle />
+  },
+  {
+    title: 'Settings',
+    path: '/settings',
+    icon: <GearFill />
   }
+  // {
+  //   title: 'About',
+  //   path: '/about',
+  //   icon: <InfoCircleFill />
+  // }
 ]

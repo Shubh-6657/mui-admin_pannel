@@ -3,8 +3,8 @@ import Home from '../pages/Dashboard/Home'
 import Customers from '../pages/Dashboard/Customers'
 import Forms from '../pages/Dashboard/Forms'
 import About from '../pages/Dashboard/About'
-import Account from '../pages/Dashboard/Account'
-import Analytics from '../pages/Dashboard/Analytics'
+import Profile from '../pages/Dashboard/Profile'
+import Charts from '../pages/Dashboard/Charts'
 
 const DashboardRoutes = () => {
   return (
@@ -13,8 +13,8 @@ const DashboardRoutes = () => {
       <Route path="/customers" element={<Customers />} />
       <Route path="/forms" element={<Forms />} />
       <Route path="/about" element={<About />} />
-      <Route path="/account" element={<Account />} />
-      <Route path="/analytics" element={<Analytics />} />
+      <Route path="/charts" element={<Charts />} />
+      <Route path="/profile" element={<Profile />} />
       <Route path="*" element={<Navigate replace to="/" />} />
     </Routes>
   )
