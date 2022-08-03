@@ -1,6 +1,14 @@
 import PageTitle from '../../components/widgets/PageTitle'
 import WorkInProgressImage from '../../components/widgets/WorkInProgressImage'
-import { Box, Button, Grid, Paper, Typography, Checkbox } from '@mui/material'
+import {
+  Box,
+  Button,
+  Grid,
+  Paper,
+  Typography,
+  Checkbox,
+  IconButton
+} from '@mui/material'
 import { styled, useTheme } from '@mui/material/styles'
 import {
   Table,
@@ -11,8 +19,12 @@ import {
 } from '@mui/material'
 import TableCell, { tableCellClasses } from '@mui/material/TableCell'
 import { customersRows } from '../../temp/customers'
+import { Trash3, Pencil } from 'react-bootstrap-icons'
+import { display } from '@mui/system'
 
 const Users = () => {
+  const theme = useTheme()
+
   const StyledTableCell = styled(TableCell)(({ theme }) => ({
     'td, th': {
       borderColor: '#eaeaea'
@@ -55,12 +67,12 @@ const Users = () => {
                     />
                   </TableCell>
                   <StyledTableCell style={{ fontWeight: 'bold' }}>
-                    Customer Name
+                    Customer
                   </StyledTableCell>
                   <StyledTableCell style={{ fontWeight: 'bold' }} align="left">
                     Contact
                   </StyledTableCell>
-                  <StyledTableCell style={{ fontWeight: 'bold' }} align="right">
+                  <StyledTableCell style={{ fontWeight: 'bold' }}>
                     Orders
                   </StyledTableCell>
                   <StyledTableCell style={{ fontWeight: 'bold' }} align="left">
@@ -131,12 +143,35 @@ const Users = () => {
                     <StyledTableCell align="left">
                       {row.phoneNumber}
                     </StyledTableCell>
-                    <StyledTableCell align="right">
-                      {row.orders}
+                    <StyledTableCell>{row.orders}</StyledTableCell>
+                    <StyledTableCell align="left">
+                      <Box style={{ display: 'flex', alignItems: 'center' }}>
+                        <div
+                          style={{
+                            width: '6px',
+                            height: '6px',
+                            marginRight: '.75rem',
+                            borderRadius: '100%',
+                            background:
+                              row.status === 'Active'
+                                ? theme.palette.success.light
+                                : row.status === 'Pending'
+                                ? theme.palette.primary.light
+                                : row.status === 'Cancelled'
+                                ? theme.palette.error.main
+                                : '#888'
+                          }}
+                        ></div>
+                        <Typography variant="caption">{row.status}</Typography>
+                      </Box>
                     </StyledTableCell>
-                    <StyledTableCell align="left">{row.status}</StyledTableCell>
                     <StyledTableCell align="right">
-                      {/* put actions buttons in here */}
+                      <IconButton color="primary">
+                        <Pencil style={{ padding: 4 }} />
+                      </IconButton>
+                      <IconButton color="error">
+                        <Trash3 style={{ padding: 4 }} />
+                      </IconButton>
                     </StyledTableCell>
                   </StyledTableRow>
                 ))}

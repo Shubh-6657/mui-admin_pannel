@@ -142,7 +142,7 @@ const Home = () => {
                   <StyledTableCell style={{ fontWeight: 'bold' }} align="left">
                     Product
                   </StyledTableCell>
-                  <StyledTableCell style={{ fontWeight: 'bold' }} align="right">
+                  <StyledTableCell style={{ fontWeight: 'bold' }}>
                     Quantity
                   </StyledTableCell>
                   <StyledTableCell style={{ fontWeight: 'bold' }} align="left">
@@ -160,9 +160,7 @@ const Home = () => {
                       {row.number}
                     </StyledTableCell>
                     <StyledTableCell align="left">{row.name}</StyledTableCell>
-                    <StyledTableCell align="right">
-                      {row.quantity}
-                    </StyledTableCell>
+                    <StyledTableCell>{row.quantity}</StyledTableCell>
                     <StyledTableCell align="left">{row.status}</StyledTableCell>
                     <StyledTableCell align="right">
                       R{row.total}
