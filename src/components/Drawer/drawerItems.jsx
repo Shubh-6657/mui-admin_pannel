@@ -19,14 +19,14 @@ export const drawerItems = [
     icon: <HouseDoorFill />
   },
   {
-    title: 'Forms',
-    path: '/forms',
-    icon: <PencilFill />
-  },
-  {
     title: 'Customers',
     path: '/customers',
     icon: <PeopleFill />
+  },
+  {
+    title: 'Forms',
+    path: '/forms',
+    icon: <PencilFill />
   },
   {
     title: 'Charts',

@@ -167,7 +167,7 @@ const Home = () => {
                           style={{
                             width: '6px',
                             height: '6px',
-                            marginRight: '.75rem',
+                            marginRight: '.7rem',
                             borderRadius: '100%',
                             background:
                               row.status === 'Approved'

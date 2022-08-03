@@ -84,7 +84,7 @@ const Users = () => {
                   },
                   startAdornment: (
                     <InputAdornment position="start">
-                      <Search style={{ marginRight: '.25rem' }} />
+                      <Search style={{ marginRight: '.35rem' }} />
                     </InputAdornment>
                   )
                 }}
@@ -213,7 +213,7 @@ const Users = () => {
                           style={{
                             width: '6px',
                             height: '6px',
-                            marginRight: '.75rem',
+                            marginRight: '.7rem',
                             borderRadius: '100%',
                             background:
                               row.status === 'Active'

@@ -67,7 +67,7 @@ const Drawer = styled(MuiDrawer, {
 
 const Dashboard = () => {
   const theme = useTheme()
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(true)
   const [currentUserTitle, setCurrentUserTitle] = useState('Joanne Pierce')
 
   const toggleDrawerOpen = () => {
