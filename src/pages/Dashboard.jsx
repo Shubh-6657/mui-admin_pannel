@@ -18,6 +18,7 @@ import appLogo from '../assets/logo.svg'
 import DashboardRoutes from '../routes/DashboardRoutes'
 import { Grid } from '@mui/material'
 import { Link } from 'react-router-dom'
+import avatar1 from '../assets/avatars/image-29.png'
 
 const drawerWidth = 240
 
@@ -67,7 +68,7 @@ const Drawer = styled(MuiDrawer, {
 const Dashboard = () => {
   const theme = useTheme()
   const [open, setOpen] = useState(false)
-  const [currentUserTitle, setCurrentUserTitle] = useState('Andrew Harrison')
+  const [currentUserTitle, setCurrentUserTitle] = useState('Joanne Pierce')
 
   const toggleDrawerOpen = () => {
     setOpen(!open)
@@ -131,6 +132,7 @@ const Dashboard = () => {
               width: '2rem',
               height: '2rem',
               flexShrink: 0,
+              overflow: 'hidden',
               alignItems: 'center',
               color: '#000',
               border: '1px solid #eee',
@@ -138,9 +140,10 @@ const Dashboard = () => {
               borderRadius: '100%'
             }}
           >
-            <Typography variant="subtitle2" style={{ userSelect: 'none' }}>
+            <img src={avatar1} style={{ width: '100%', height: '100%' }} />
+            {/* <Typography variant="subtitle2" style={{ userSelect: 'none' }}>
               <>{currentUserTitle && currentUserTitle[0]}</>
-            </Typography>
+            </Typography> */}
           </Box>
           <Box style={{ paddingLeft: '1rem' }}>
             <Typography

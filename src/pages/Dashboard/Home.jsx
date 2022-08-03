@@ -1,13 +1,15 @@
 import { Box, Button, Grid, Paper, Typography } from '@mui/material'
 import { styled, useTheme } from '@mui/material/styles'
-import Table from '@mui/material/Table'
-import TableBody from '@mui/material/TableBody'
+import {
+  Table,
+  TableBody,
+  TableContainer,
+  TableHead,
+  TableRow
+} from '@mui/material'
 import TableCell, { tableCellClasses } from '@mui/material/TableCell'
-import TableContainer from '@mui/material/TableContainer'
-import TableHead from '@mui/material/TableHead'
-import TableRow from '@mui/material/TableRow'
-import { summaryItems, homeTableRows, homeShortcutItems } from '../../temp/home'
 import { BoxArrowUpRight, InfoCircle } from 'react-bootstrap-icons'
+import { summaryItems, homeTableRows, homeShortcutItems } from '../../temp/home'
 import {
   VictoryBar,
   VictoryChart,

@@ -35,7 +35,7 @@ const Forms = () => {
           <Grid item xs={6}>
             <Paper>
               <Box style={{ borderBottom: '1px solid #eaeaea' }}>
-                <div style={{ padding: '1rem' }}>Simple Form Layout</div>
+                <div style={{ padding: '1rem' }}>Simple Form</div>
               </Box>
               <Box component="form" style={{ padding: '1rem' }}>
                 <div style={{ marginBottom: '1rem' }}>
@@ -226,7 +226,7 @@ const Forms = () => {
           <Grid item xs={12}>
             <Paper>
               <Box style={{ borderBottom: '1px solid #eaeaea' }}>
-                <div style={{ padding: '1rem' }}>Multi Column Form Layout</div>
+                <div style={{ padding: '1rem' }}>Multi Column Form</div>
               </Box>
               <Grid
                 component={'form'}

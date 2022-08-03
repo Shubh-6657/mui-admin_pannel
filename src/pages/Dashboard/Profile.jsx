@@ -5,7 +5,7 @@ const Profile = () => {
   return (
     <>
       {/* <PageTitle title="This page is coming some day 😎" /> */}
-      <PageTitle title="These pages are still work-in-progress 😎" />
+      <PageTitle title="This page is still work-in-progress 😎" />
       <WorkInProgressImage />
     </>
   )

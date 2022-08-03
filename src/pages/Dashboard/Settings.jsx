@@ -1,14 +1,14 @@
 import PageTitle from '../../components/widgets/PageTitle'
 import WorkInProgressImage from '../../components/widgets/WorkInProgressImage'
 
-const Charts = () => {
+const Profile = () => {
   return (
     <>
-      {/* <PageTitle title="I doubt I'll ever use these 📈" /> */}
-      <PageTitle title="This page is still work-in-progress 📈" />
+      {/* <PageTitle title="This page is coming some day 💻" /> */}
+      <PageTitle title="This page is still work-in-progress 💻" />
       <WorkInProgressImage />
     </>
   )
 }
 
-export default Charts
+export default Profile

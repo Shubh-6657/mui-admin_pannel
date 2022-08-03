@@ -5,6 +5,7 @@ import Forms from '../pages/Dashboard/Forms'
 import About from '../pages/Dashboard/About'
 import Profile from '../pages/Dashboard/Profile'
 import Charts from '../pages/Dashboard/Charts'
+import Settings from '../pages/Dashboard/Settings'
 
 const DashboardRoutes = () => {
   return (
@@ -15,6 +16,7 @@ const DashboardRoutes = () => {
       <Route path="/about" element={<About />} />
       <Route path="/charts" element={<Charts />} />
       <Route path="/profile" element={<Profile />} />
+      <Route path="/settings" element={<Settings />} />
       <Route path="*" element={<Navigate replace to="/" />} />
     </Routes>
   )
