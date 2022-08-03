@@ -100,7 +100,7 @@ const Home = () => {
                   </Typography>
                   <Typography
                     noWrap
-                    variant="h6"
+                    variant="subtitle1"
                     fontWeight={'bold'}
                     style={{
                       userSelect: 'none',
@@ -111,7 +111,7 @@ const Home = () => {
                   </Typography>
                   <Typography
                     noWrap
-                    variant="body2"
+                    variant="caption"
                     style={{
                       color: '#888',
                       userSelect: 'none',
@@ -161,7 +161,27 @@ const Home = () => {
                     </StyledTableCell>
                     <StyledTableCell align="left">{row.name}</StyledTableCell>
                     <StyledTableCell>{row.quantity}</StyledTableCell>
-                    <StyledTableCell align="left">{row.status}</StyledTableCell>
+                    <StyledTableCell align="left">
+                      <Box style={{ display: 'flex', alignItems: 'center' }}>
+                        <div
+                          style={{
+                            width: '6px',
+                            height: '6px',
+                            marginRight: '.75rem',
+                            borderRadius: '100%',
+                            background:
+                              row.status === 'Approved'
+                                ? theme.palette.success.light
+                                : row.status === 'Pending'
+                                ? theme.palette.primary.light
+                                : row.status === 'Rejected'
+                                ? theme.palette.error.main
+                                : '#888'
+                          }}
+                        ></div>
+                        <Typography variant="caption">{row.status}</Typography>
+                      </Box>
+                    </StyledTableCell>
                     <StyledTableCell align="right">
                       R{row.total}
                     </StyledTableCell>

@@ -7,7 +7,9 @@ import {
   Paper,
   Typography,
   Checkbox,
-  IconButton
+  IconButton,
+  TextField,
+  InputAdornment
 } from '@mui/material'
 import { styled, useTheme } from '@mui/material/styles'
 import {
@@ -15,22 +17,25 @@ import {
   TableBody,
   TableContainer,
   TableHead,
-  TableRow
+  TableRow,
+  TablePagination
 } from '@mui/material'
 import TableCell, { tableCellClasses } from '@mui/material/TableCell'
 import { customersRows } from '../../temp/customers'
-import { Trash3, Pencil } from 'react-bootstrap-icons'
-import { display } from '@mui/system'
+import { Trash3, Pencil, Search, Plus as PlusIcon } from 'react-bootstrap-icons'
+import { useState } from 'react'
 
 const Users = () => {
   const theme = useTheme()
+  const [page, setPage] = useState(0)
+  const [rowsPerPage, setRowsPerPage] = useState(5)
 
   const StyledTableCell = styled(TableCell)(({ theme }) => ({
     'td, th': {
       borderColor: '#eaeaea'
     },
     [`&.${tableCellClasses.head}`]: {
-      backgroundColor: theme.palette.common.white,
+      // backgroundColor: theme.palette.common.white,
       color: theme.palette.common.black
     },
     [`&.${tableCellClasses.body}`]: {
@@ -46,16 +51,62 @@ const Users = () => {
       border: 0
     }
   }))
+
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage)
+  }
+
+  const handleChangeRowsPerPage = (event) => {
+    setRowsPerPage(parseInt(event.target.value, 10))
+    setPage(0)
+  }
+
   return (
     <>
       <PageTitle title="Manage your customers 🙋‍♀️" />
       <Grid container spacing={3}>
         <Grid item xs={12}>
           <TableContainer component={Paper}>
+            <Box
+              display={'flex'}
+              justifyContent={'space-between'}
+              style={{ borderBottom: '0', padding: '1rem' }}
+            >
+              <TextField
+                variant="standard"
+                placeholder="Search customers"
+                InputProps={{
+                  disableUnderline: true,
+                  sx: {
+                    height: '2.25rem',
+                    fontSize: '.875rem',
+                    marginLeft: '.15rem'
+                  },
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <Search style={{ marginRight: '.25rem' }} />
+                    </InputAdornment>
+                  )
+                }}
+              ></TextField>
+              <Button
+                variant="contained"
+                style={{ marginLeft: '1rem' }}
+                startIcon={<PlusIcon />}
+              >
+                Add Customer
+              </Button>
+            </Box>
             <Table sx={{ minWidth: 700 }} aria-label="customized table">
-              <TableHead>
+              <TableHead
+                style={{
+                  background: '#fafafa',
+                  borderTop: '1px solid #eaeaea',
+                  borderBottom: '1px solid #eaeaea'
+                }}
+              >
                 <TableRow>
-                  <TableCell padding="checkbox">
+                  <TableCell padding="checkbox" style={{ borderBottom: 0 }}>
                     <Checkbox
                       color="primary"
                       // indeterminate={numSelected > 0 && numSelected < rowCount}
@@ -66,19 +117,32 @@ const Users = () => {
                       }}
                     />
                   </TableCell>
-                  <StyledTableCell style={{ fontWeight: 'bold' }}>
+                  <StyledTableCell
+                    style={{ fontWeight: 'bold', borderBottom: 0 }}
+                  >
                     Customer
                   </StyledTableCell>
-                  <StyledTableCell style={{ fontWeight: 'bold' }} align="left">
+                  <StyledTableCell
+                    style={{ fontWeight: 'bold', borderBottom: 0 }}
+                    align="left"
+                  >
                     Contact
                   </StyledTableCell>
-                  <StyledTableCell style={{ fontWeight: 'bold' }}>
+                  <StyledTableCell
+                    style={{ fontWeight: 'bold', borderBottom: 0 }}
+                  >
                     Orders
                   </StyledTableCell>
-                  <StyledTableCell style={{ fontWeight: 'bold' }} align="left">
+                  <StyledTableCell
+                    style={{ fontWeight: 'bold', borderBottom: 0 }}
+                    align="left"
+                  >
                     Status
                   </StyledTableCell>
-                  <StyledTableCell style={{ fontWeight: 'bold' }} align="right">
+                  <StyledTableCell
+                    style={{ fontWeight: 'bold', borderBottom: 0 }}
+                    align="center"
+                  >
                     Actions
                   </StyledTableCell>
                 </TableRow>
@@ -122,7 +186,6 @@ const Users = () => {
                           style={{
                             height: '2.5rem',
                             width: '10rem'
-                            // background: '#eee'
                           }}
                         >
                           <Typography
@@ -165,7 +228,7 @@ const Users = () => {
                         <Typography variant="caption">{row.status}</Typography>
                       </Box>
                     </StyledTableCell>
-                    <StyledTableCell align="right">
+                    <StyledTableCell align="center">
                       <IconButton color="primary">
                         <Pencil style={{ padding: 4 }} />
                       </IconButton>
@@ -177,6 +240,35 @@ const Users = () => {
                 ))}
               </TableBody>
             </Table>
+            <div
+              style={{
+                width: '100%',
+                borderTop: '1px solid #eaeaea',
+                padding: '1rem'
+              }}
+            >
+              <TablePagination
+                rowsPerPageOptions={[5, 10, 25]}
+                component="div"
+                count={customersRows.length}
+                rowsPerPage={rowsPerPage}
+                page={page}
+                onPageChange={handleChangePage}
+                onRowsPerPageChange={handleChangeRowsPerPage}
+              />
+            </div>
+            {/* <Box
+              display={'flex'}
+              justifyContent={'end'}
+              style={{ borderTop: '1px solid #eaeaea', padding: '1rem' }}
+            >
+              <Button variant="outlined" color="error">
+                Cancel
+              </Button>
+              <Button variant="contained" style={{ marginLeft: '1rem' }}>
+                Submit
+              </Button>
+            </Box> */}
           </TableContainer>
         </Grid>
       </Grid>

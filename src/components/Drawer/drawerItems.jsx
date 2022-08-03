@@ -24,14 +24,14 @@ export const drawerItems = [
     icon: <PencilFill />
   },
   {
-    title: 'Charts',
-    path: '/charts',
-    icon: <BarChartFill />
-  },
-  {
     title: 'Customers',
     path: '/customers',
     icon: <PeopleFill />
+  },
+  {
+    title: 'Charts',
+    path: '/charts',
+    icon: <BarChartFill />
   },
   {
     title: 'Profile',
