@@ -1,14 +1,10 @@
 import { firestore } from '../../firebase'
 import { addDoc, setDoc, doc, collection } from 'firebase/firestore'
 
-// ============================================================
-
 const eventsCollectionRef = collection(firestore, 'events')
 const groupsCollectionRef = collection(firestore, 'groups')
 const articlesCollectionRef = collection(firestore, 'articles')
 const categoriesCollectionRef = collection(firestore, 'categories')
-
-// ============================================================
 
 export const createEvent = async (docData, slug) => {
   if (docData && slug) {
@@ -25,8 +21,6 @@ export const createEvent = async (docData, slug) => {
   }
 }
 
-// ============================================================
-
 export const createArticle = async (docData, slug) => {
   if (docData && slug) {
     const docRef = doc(firestore, `articles/${slug}`)
@@ -42,8 +36,6 @@ export const createArticle = async (docData, slug) => {
   }
 }
 
-// ============================================================
-
 export const createGroup = async (docData, slug) => {
   if (docData && slug) {
     const docRef = doc(firestore, `groups/${slug}`)
@@ -58,8 +50,6 @@ export const createGroup = async (docData, slug) => {
     alert('cannot create group without data and slug')
   }
 }
-
-// ============================================================
 
 export const createCategory = async (docData) => {
   if (docData) {

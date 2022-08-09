@@ -4,7 +4,6 @@ import WorkInProgressImage from '../../components/widgets/WorkInProgressImage'
 const Profile = () => {
   return (
     <>
-      {/* <PageTitle title="This page is coming some day 😎" /> */}
       <PageTitle title="This page is still work-in-progress 😎" />
       <WorkInProgressImage />
     </>

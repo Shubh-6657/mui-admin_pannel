@@ -141,9 +141,6 @@ const Dashboard = () => {
             }}
           >
             <img src={avatar1} style={{ width: '100%', height: '100%' }} />
-            {/* <Typography variant="subtitle2" style={{ userSelect: 'none' }}>
-              <>{currentUserTitle && currentUserTitle[0]}</>
-            </Typography> */}
           </Box>
           <Box style={{ paddingLeft: '1rem' }}>
             <Typography

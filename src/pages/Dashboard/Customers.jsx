@@ -1,5 +1,4 @@
 import PageTitle from '../../components/widgets/PageTitle'
-import WorkInProgressImage from '../../components/widgets/WorkInProgressImage'
 import {
   Box,
   Button,
@@ -35,7 +34,6 @@ const Users = () => {
       borderColor: '#eaeaea'
     },
     [`&.${tableCellClasses.head}`]: {
-      // backgroundColor: theme.palette.common.white,
       color: theme.palette.common.black
     },
     [`&.${tableCellClasses.body}`]: {
@@ -109,9 +107,6 @@ const Users = () => {
                   <TableCell padding="checkbox" style={{ borderBottom: 0 }}>
                     <Checkbox
                       color="primary"
-                      // indeterminate={numSelected > 0 && numSelected < rowCount}
-                      // checked={rowCount > 0 && numSelected === rowCount}
-                      // onChange={onSelectAllClick}
                       inputProps={{
                         'aria-label': 'select all desserts'
                       }}
@@ -157,9 +152,6 @@ const Users = () => {
                     >
                       <Checkbox
                         color="primary"
-                        // indeterminate={numSelected > 0 && numSelected < rowCount}
-                        // checked={rowCount > 0 && numSelected === rowCount}
-                        // onChange={onSelectAllClick}
                         inputProps={{
                           'aria-label': 'select all desserts'
                         }}
@@ -257,18 +249,6 @@ const Users = () => {
                 onRowsPerPageChange={handleChangeRowsPerPage}
               />
             </div>
-            {/* <Box
-              display={'flex'}
-              justifyContent={'end'}
-              style={{ borderTop: '1px solid #eaeaea', padding: '1rem' }}
-            >
-              <Button variant="outlined" color="error">
-                Cancel
-              </Button>
-              <Button variant="contained" style={{ marginLeft: '1rem' }}>
-                Submit
-              </Button>
-            </Box> */}
           </TableContainer>
         </Grid>
       </Grid>

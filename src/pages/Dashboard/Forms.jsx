@@ -13,7 +13,6 @@ import {
   Button
 } from '@mui/material'
 import PageTitle from '../../components/widgets/PageTitle'
-// import WorkInProgressImage from '../../components/widgets/WorkInProgressImage'
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns'
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
 import { DatePicker } from '@mui/x-date-pickers/DatePicker'

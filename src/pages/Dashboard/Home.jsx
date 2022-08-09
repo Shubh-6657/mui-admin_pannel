@@ -88,7 +88,7 @@ const Home = () => {
           summaryItems.map((item, index) => {
             return (
               <Grid item xs={3} key={'summary item ' + index}>
-                <Paper sx={{ padding: 2 }}>
+                <Paper sx={{ padding: 2, overflow: 'hidden' }}>
                   <Typography
                     variant="body2"
                     style={{

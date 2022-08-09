@@ -1,15 +1,6 @@
 import { firestore } from '../../firebase'
 import { collection, doc, getDocs, setDoc } from 'firebase/firestore'
 
-import {
-  formatEvents,
-  formatArticles,
-  formatProfiles,
-  formatCategories
-} from './formatArrays'
-
-// ============================================================
-
 const appContentCollectionRef = collection(firestore, 'app-content')
 const eventsCollectionRef = collection(firestore, 'events')
 const groupsCollectionRef = collection(firestore, 'groups')
@@ -185,16 +176,6 @@ export const fetchSidebarArticles = async () => {
 }
 
 export const fetchSidebarGroups = async () => {
-  // const res = await fetch(
-  //   'https://playground-strapi.herokuapp.com/api/profiles?populate=*'
-  // )
-  // if (res) {
-  //   let data = await res.json()
-  //   let formattedData = formatProfiles(
-  //     data && data.data ? data.data.sort(() => Math.random() - 0.5) : null
-  //   )
-  //   return formattedData
-  // }
   return null
 }
 
