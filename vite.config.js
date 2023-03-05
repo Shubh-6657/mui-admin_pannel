@@ -5,8 +5,8 @@ import viteCompression from 'vite-plugin-compression'
 // https://vitejs.dev/config/
 export default defineConfig({
   server: {
-    port: 5021,
-    open: true
+    port: 5020,
+    open: true,
   },
-  plugins: [react(), viteCompression({ algorithm: 'brotliCompress' })]
+  plugins: [react(), viteCompression({ algorithm: 'brotliCompress' })],
 })

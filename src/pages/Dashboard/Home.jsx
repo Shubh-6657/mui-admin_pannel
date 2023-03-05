@@ -1,47 +1,52 @@
-import { Box, Button, Grid, Paper, Typography } from '@mui/material'
-import { styled, useTheme } from '@mui/material/styles'
 import {
+  Box,
+  Button,
+  Grid,
+  Paper,
+  Typography,
   Table,
   TableBody,
   TableContainer,
   TableHead,
-  TableRow
+  TableRow,
 } from '@mui/material'
+import { styled, useTheme } from '@mui/material/styles'
+
 import TableCell, { tableCellClasses } from '@mui/material/TableCell'
 import { BoxArrowUpRight, InfoCircle } from 'react-bootstrap-icons'
-import { summaryItems, homeTableRows, homeShortcutItems } from '../../temp/home'
 import {
   VictoryBar,
   VictoryChart,
   VictoryTheme,
   VictoryAxis,
-  VictoryStack
+  VictoryStack,
 } from 'victory'
+import { summaryItems, homeTableRows, homeShortcutItems } from '../../temp/home'
 import PageTitle from '../../components/widgets/PageTitle'
 
-const Home = () => {
+function Home() {
   const theme = useTheme()
 
   const StyledTableCell = styled(TableCell)(({ theme }) => ({
     'td, th': {
-      borderColor: '#eaeaea'
+      borderColor: '#eaeaea',
     },
     [`&.${tableCellClasses.head}`]: {
       backgroundColor: theme.palette.common.white,
-      color: theme.palette.common.black
+      color: theme.palette.common.black,
     },
     [`&.${tableCellClasses.body}`]: {
-      fontSize: 14
-    }
+      fontSize: 14,
+    },
   }))
 
   const StyledTableRow = styled(TableRow)(({ theme }) => ({
     'td, th': {
-      borderColor: '#eaeaea'
+      borderColor: '#eaeaea',
     },
     '&:last-child td, &:last-child th': {
-      border: 0
-    }
+      border: 0,
+    },
   }))
 
   const data2012 = [
@@ -50,7 +55,7 @@ const Home = () => {
     { month: 3, earnings: 14250 },
     { month: 4, earnings: 19000 },
     { month: 5, earnings: 8000 },
-    { month: 6, earnings: 21800 }
+    { month: 6, earnings: 21800 },
   ]
 
   const data2013 = [
@@ -59,7 +64,7 @@ const Home = () => {
     { month: 3, earnings: 19500 },
     { month: 4, earnings: 13000 },
     { month: 5, earnings: 8000 },
-    { month: 6, earnings: 21800 }
+    { month: 6, earnings: 21800 },
   ]
 
   const data2014 = [
@@ -68,7 +73,7 @@ const Home = () => {
     { month: 3, earnings: 20000 },
     { month: 4, earnings: 15500 },
     { month: 5, earnings: 21800 },
-    { month: 6, earnings: 6000 }
+    { month: 6, earnings: 6000 },
   ]
 
   const data2015 = [
@@ -77,7 +82,7 @@ const Home = () => {
     { month: 3, earnings: 15000 },
     { month: 4, earnings: 12000 },
     { month: 5, earnings: 14000 },
-    { month: 6, earnings: 12000 }
+    { month: 6, earnings: 12000 },
   ]
 
   return (
@@ -85,49 +90,47 @@ const Home = () => {
       <PageTitle title="Welcome to your dashboard 👋" />
       <Grid container spacing={3}>
         {summaryItems &&
-          summaryItems.map((item, index) => {
-            return (
-              <Grid item xs={3} key={'summary item ' + index}>
-                <Paper sx={{ padding: 2, overflow: 'hidden' }}>
-                  <Typography
-                    variant="body2"
-                    style={{
-                      color: '#999',
-                      userSelect: 'none'
-                    }}
-                  >
-                    {item.title}
-                  </Typography>
-                  <Typography
-                    noWrap
-                    variant="subtitle1"
-                    fontWeight={'bold'}
-                    style={{
-                      userSelect: 'none',
-                      marginTop: '.25rem'
-                    }}
-                  >
-                    {item.value}
-                  </Typography>
-                  <Typography
-                    noWrap
-                    variant="caption"
-                    style={{
-                      color: '#888',
-                      userSelect: 'none',
-                      marginTop: '.25rem'
-                    }}
-                  >
-                    You've gained{' '}
-                    <span style={{ color: theme.palette.primary.main }}>
-                      {item.increasedBy}
-                    </span>{' '}
-                    this week
-                  </Typography>
-                </Paper>
-              </Grid>
-            )
-          })}
+          summaryItems.map((item, index) => (
+            <Grid item xs={3} key={`summary item ${index}`}>
+              <Paper sx={{ padding: 2, overflow: 'hidden' }}>
+                <Typography
+                  variant="body2"
+                  style={{
+                    color: '#999',
+                    userSelect: 'none',
+                  }}
+                >
+                  {item.title}
+                </Typography>
+                <Typography
+                  noWrap
+                  variant="subtitle1"
+                  fontWeight="bold"
+                  style={{
+                    userSelect: 'none',
+                    marginTop: '.25rem',
+                  }}
+                >
+                  {item.value}
+                </Typography>
+                <Typography
+                  noWrap
+                  variant="caption"
+                  style={{
+                    color: '#888',
+                    userSelect: 'none',
+                    marginTop: '.25rem',
+                  }}
+                >
+                  You've gained{' '}
+                  <span style={{ color: theme.palette.primary.main }}>
+                    {item.increasedBy}
+                  </span>{' '}
+                  this week
+                </Typography>
+              </Paper>
+            </Grid>
+          ))}
       </Grid>
       {/* ================================================= */}
       <Grid container spacing={3} style={{ marginTop: '1rem' }}>
@@ -176,9 +179,9 @@ const Home = () => {
                                 ? theme.palette.primary.light
                                 : row.status === 'Rejected'
                                 ? theme.palette.error.main
-                                : '#888'
+                                : '#888',
                           }}
-                        ></div>
+                        />
                         <Typography variant="caption">{row.status}</Typography>
                       </Box>
                     </StyledTableCell>
@@ -215,22 +218,21 @@ const Home = () => {
 
       <Grid container spacing={3} style={{ marginTop: '1rem' }}>
         {homeShortcutItems &&
-          homeShortcutItems.map((item, index) => {
-            return (
-              <Grid item xs={6} key={'helpful info' + index}>
-                <Paper
+          homeShortcutItems.map((item, index) => (
+            <Grid item xs={6} key={`helpful info${index}`}>
+              <Paper
+                sx={{
+                  padding: 2,
+                }}
+              >
+                <Box
                   sx={{
-                    padding: 2
+                    display: 'flex',
+                    alignItems: 'center',
+                    verticalAlign: 'middle',
                   }}
                 >
-                  <Box
-                    sx={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      verticalAlign: 'middle'
-                    }}
-                  >
-                    {/* <Box
+                  {/* <Box
                       sx={{
                         display: 'flex',
                         alignItems: 'center',
@@ -242,62 +244,61 @@ const Home = () => {
                     >
                       {item.cardIcon}
                     </Box> */}
-                    <div
-                      style={{
-                        verticalAlign: 'middle'
-                      }}
-                    ></div>
-                    <Typography
-                      variant="body"
-                      style={{
-                        color: theme.palette.primary.main,
-                        userSelect: 'none'
-                      }}
-                    >
-                      {item.title}
-                    </Typography>
-                  </Box>
-                  <Typography
-                    noWrap
-                    variant="subtitle1"
-                    fontWeight={'bold'}
+                  <div
                     style={{
-                      userSelect: 'none',
-                      marginTop: '.5rem'
+                      verticalAlign: 'middle',
                     }}
-                  >
-                    {item.subtitle}
-                  </Typography>
+                  />
                   <Typography
-                    variant="subtitle2"
+                    variant="body"
                     style={{
-                      color: '#888',
+                      color: theme.palette.primary.main,
                       userSelect: 'none',
-                      marginTop: '.5rem'
                     }}
                   >
-                    {item.text}
+                    {item.title}
                   </Typography>
-                  <Box
-                    sx={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      marginTop: '1rem'
-                    }}
+                </Box>
+                <Typography
+                  noWrap
+                  variant="subtitle1"
+                  fontWeight="bold"
+                  style={{
+                    userSelect: 'none',
+                    marginTop: '.5rem',
+                  }}
+                >
+                  {item.subtitle}
+                </Typography>
+                <Typography
+                  variant="subtitle2"
+                  style={{
+                    color: '#888',
+                    userSelect: 'none',
+                    marginTop: '.5rem',
+                  }}
+                >
+                  {item.text}
+                </Typography>
+                <Box
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    marginTop: '1rem',
+                  }}
+                >
+                  <Button
+                    variant="contained"
+                    disableElevation
+                    style={{ textTransform: 'none' }}
+                    endIcon={item.buttonIcon}
                   >
-                    <Button
-                      variant="contained"
-                      disableElevation
-                      style={{ textTransform: 'none' }}
-                      endIcon={item.buttonIcon}
-                    >
-                      {item.buttonTitle}
-                    </Button>
-                  </Box>
-                </Paper>
-              </Grid>
-            )
-          })}
+                    {item.buttonTitle}
+                  </Button>
+                </Box>
+              </Paper>
+            </Grid>
+          ))}
       </Grid>
     </>
   )
