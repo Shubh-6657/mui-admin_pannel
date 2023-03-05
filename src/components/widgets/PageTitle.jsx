@@ -5,7 +5,7 @@ function PageTitle({ title }) {
     <Box
       style={{
         width: '100%',
-        borderBottom: '1px solid #eaeaea',
+        borderBottom: '1px solid #e5e5e5',
         padding: '1rem 0 1rem',
         marginBottom: '1.5rem',
       }}

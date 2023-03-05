@@ -29,7 +29,7 @@ function Home() {
 
   const StyledTableCell = styled(TableCell)(({ theme }) => ({
     'td, th': {
-      borderColor: '#eaeaea',
+      borderColor: '#e5e5e5',
     },
     [`&.${tableCellClasses.head}`]: {
       backgroundColor: theme.palette.common.white,
@@ -42,7 +42,7 @@ function Home() {
 
   const StyledTableRow = styled(TableRow)(({ theme }) => ({
     'td, th': {
-      borderColor: '#eaeaea',
+      borderColor: '#e5e5e5',
     },
     '&:last-child td, &:last-child th': {
       border: 0,

@@ -1,4 +1,3 @@
-import PageTitle from '../../components/widgets/PageTitle'
 import {
   Box,
   Button,
@@ -8,46 +7,46 @@ import {
   Checkbox,
   IconButton,
   TextField,
-  InputAdornment
-} from '@mui/material'
-import { styled, useTheme } from '@mui/material/styles'
-import {
+  InputAdornment,
   Table,
   TableBody,
   TableContainer,
   TableHead,
   TableRow,
-  TablePagination
+  TablePagination,
 } from '@mui/material'
+import { styled, useTheme } from '@mui/material/styles'
+
 import TableCell, { tableCellClasses } from '@mui/material/TableCell'
-import { customersRows } from '../../temp/customers'
 import { Trash3, Pencil, Search, Plus as PlusIcon } from 'react-bootstrap-icons'
 import { useState } from 'react'
+import { customersRows } from '../../temp/customers'
+import PageTitle from '../../components/widgets/PageTitle'
 
-const Users = () => {
+function Users() {
   const theme = useTheme()
   const [page, setPage] = useState(0)
   const [rowsPerPage, setRowsPerPage] = useState(5)
 
   const StyledTableCell = styled(TableCell)(({ theme }) => ({
     'td, th': {
-      borderColor: '#eaeaea'
+      borderColor: '#e5e5e5',
     },
     [`&.${tableCellClasses.head}`]: {
-      color: theme.palette.common.black
+      color: theme.palette.common.black,
     },
     [`&.${tableCellClasses.body}`]: {
-      fontSize: 14
-    }
+      fontSize: 14,
+    },
   }))
 
   const StyledTableRow = styled(TableRow)(({ theme }) => ({
     'td, th': {
-      borderColor: '#eaeaea'
+      borderColor: '#e5e5e5',
     },
     '&:last-child td, &:last-child th': {
-      border: 0
-    }
+      border: 0,
+    },
   }))
 
   const handleChangePage = (event, newPage) => {
@@ -66,8 +65,8 @@ const Users = () => {
         <Grid item xs={12}>
           <TableContainer component={Paper}>
             <Box
-              display={'flex'}
-              justifyContent={'space-between'}
+              display="flex"
+              justifyContent="space-between"
               style={{ borderBottom: '0', padding: '1rem' }}
             >
               <TextField
@@ -76,17 +75,21 @@ const Users = () => {
                 InputProps={{
                   disableUnderline: true,
                   sx: {
+                    background: '#f5f5f5',
+                    width: '300px',
+                    borderRadius: '4px',
+                    padding: '20px',
                     height: '2.25rem',
                     fontSize: '.875rem',
-                    marginLeft: '.15rem'
+                    marginLeft: '.15rem',
                   },
                   startAdornment: (
                     <InputAdornment position="start">
                       <Search style={{ marginRight: '.35rem' }} />
                     </InputAdornment>
-                  )
+                  ),
                 }}
-              ></TextField>
+              />
               <Button
                 variant="contained"
                 style={{ marginLeft: '1rem' }}
@@ -99,8 +102,8 @@ const Users = () => {
               <TableHead
                 style={{
                   background: '#fafafa',
-                  borderTop: '1px solid #eaeaea',
-                  borderBottom: '1px solid #eaeaea'
+                  borderTop: '1px solid #e5e5e5',
+                  borderBottom: '1px solid #e5e5e5',
                 }}
               >
                 <TableRow>
@@ -108,7 +111,7 @@ const Users = () => {
                     <Checkbox
                       color="primary"
                       inputProps={{
-                        'aria-label': 'select all desserts'
+                        'aria-label': 'select all desserts',
                       }}
                     />
                   </TableCell>
@@ -153,7 +156,7 @@ const Users = () => {
                       <Checkbox
                         color="primary"
                         inputProps={{
-                          'aria-label': 'select all desserts'
+                          'aria-label': 'select all desserts',
                         }}
                       />
                     </StyledTableCell>
@@ -166,7 +169,7 @@ const Users = () => {
                             height: '2.5rem',
                             marginRight: '1rem',
                             borderRadius: '100%',
-                            background: '#f5f5f5'
+                            background: '#f5f5f5',
                           }}
                         >
                           <img
@@ -177,7 +180,7 @@ const Users = () => {
                         <Box
                           style={{
                             height: '2.5rem',
-                            width: '10rem'
+                            width: '10rem',
                           }}
                         >
                           <Typography
@@ -214,9 +217,9 @@ const Users = () => {
                                 ? theme.palette.primary.light
                                 : row.status === 'Cancelled'
                                 ? theme.palette.error.main
-                                : '#888'
+                                : '#888',
                           }}
-                        ></div>
+                        />
                         <Typography variant="caption">{row.status}</Typography>
                       </Box>
                     </StyledTableCell>
@@ -235,8 +238,8 @@ const Users = () => {
             <div
               style={{
                 width: '100%',
-                borderTop: '1px solid #eaeaea',
-                padding: '1rem'
+                borderTop: '1px solid #e5e5e5',
+                padding: '1rem',
               }}
             >
               <TablePagination

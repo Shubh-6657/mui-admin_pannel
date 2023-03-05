@@ -85,7 +85,7 @@ function Dashboard() {
           zIndex: (theme) => theme.zIndex.drawer + 1,
           background: 'white',
           border: 0,
-          borderBottom: '1px solid #eaeaea',
+          borderBottom: '1px solid #e5e5e5',
         }}
       >
         <Toolbar>
@@ -122,7 +122,7 @@ function Dashboard() {
           style={{
             display: 'flex',
             color: '#fff',
-            borderBottom: '1px solid #eaeaea',
+            borderBottom: '1px solid #e5e5e5',
             alignItems: 'center',
             padding: '1rem',
           }}
@@ -136,7 +136,7 @@ function Dashboard() {
               overflow: 'hidden',
               alignItems: 'center',
               color: '#000',
-              border: '1px solid #eee',
+              border: '1px solid #e5e5e5',
               justifyContent: 'center',
               borderRadius: '100%',
             }}
