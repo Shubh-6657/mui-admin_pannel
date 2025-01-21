@@ -10,39 +10,39 @@ function createData(number, name, quantity, status, total) {
 }
 
 export const homeTableRows = [
-  createData(192737, 'Camera Lens', 32, 'Approved', '98612.30'),
-  createData(273453, 'Keyboard', 15, 'Approved', '47500.00'),
-  createData(188736, 'Chair', 85, 'Pending', '103456.50'),
-  createData(103645, 'Headset', 7, 'Approved', '8200.99'),
-  createData(365168, 'Mouse', 12, 'Rejected', '16400.00'),
-  createData(423742, 'Desktop', 24, 'Pending', '21050.32'),
-  createData(983893, 'Computer Accessories', 61, 'Pending', '34640.00')
+  createData(273712, 'Table', 32, 'Approved', '98612.30'),
+  createData(453756, 'Laptop', 15, 'Approved', '47500.00'),
+  createData(736261, 'Chair', 85, 'Pending', '103456.50'),
+  createData(645745, 'Earphone', 7, 'Approved', '8200.99'),
+  createData(687845, 'Mouse', 12, 'Rejected', '16400.00'),
+  createData(742444, 'Desktop', 24, 'Pending', '21050.32'),
+  createData(893909, 'Computer Accessories', 61, 'Pending', '34640.00')
 ]
 
 export const summaryItems = [
   {
     title: 'Total Page Views',
-    value: '2,519,208',
+    value: '208',
     percentageIncrease: '',
-    increasedBy: '17,523'
+    increasedBy: '82,523'
   },
   {
     title: 'Total Users',
-    value: '78,250',
+    value: '250',
     percentageIncrease: '',
-    increasedBy: '419'
+    increasedBy: '49'
   },
   {
     title: 'Total Orders',
-    value: '18,800',
+    value: '800',
     percentageIncrease: '',
     increasedBy: '62'
   },
   {
     title: 'Total Sales',
-    value: 'R35,078',
+    value: '078',
     percentageIncrease: '',
-    increasedBy: 'R4,703'
+    increasedBy: '703'
   }
 ]
 

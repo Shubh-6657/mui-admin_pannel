@@ -68,7 +68,7 @@ const Drawer = styled(MuiDrawer, {
 function Dashboard() {
   const theme = useTheme()
   const [open, setOpen] = useState(true)
-  const [currentUserTitle, setCurrentUserTitle] = useState('Joanne Pierce')
+  const [currentUserTitle, setCurrentUserTitle] = useState('Shubh Agrahari')
 
   const toggleDrawerOpen = () => {
     setOpen(!open)
@@ -100,14 +100,14 @@ function Dashboard() {
           >
             <MenuIcon />
           </IconButton>
-          <Link to="/">
+          {/* <Link to="/">
             <img
               src={appLogo}
               draggable={false}
               style={{ width: '9rem', height: '1.5rem' }}
               alt="app logo"
             />
-          </Link>
+          </Link> */}
         </Toolbar>
       </AppBar>
       <Drawer

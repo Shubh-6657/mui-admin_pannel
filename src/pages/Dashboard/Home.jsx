@@ -87,7 +87,7 @@ function Home() {
 
   return (
     <>
-      <PageTitle title="Welcome to your dashboard 👋" />
+      <PageTitle title="Welcome to your dashboard" />
       <Grid container spacing={3}>
         {summaryItems &&
           summaryItems.map((item, index) => (
@@ -134,16 +134,16 @@ function Home() {
       </Grid>
       {/* ================================================= */}
       <Grid container spacing={3} style={{ marginTop: '1rem' }}>
-        <Grid item xs={8}>
+        <Grid item xs={16}>
           <TableContainer component={Paper}>
             <Table sx={{ minWidth: 700 }} aria-label="customized table">
               <TableHead>
                 <TableRow>
                   <StyledTableCell style={{ fontWeight: 'bold' }}>
-                    Tracking no.
+                    Tracking Id
                   </StyledTableCell>
                   <StyledTableCell style={{ fontWeight: 'bold' }} align="left">
-                    Product
+                    Items
                   </StyledTableCell>
                   <StyledTableCell style={{ fontWeight: 'bold' }}>
                     Quantity
@@ -195,7 +195,7 @@ function Home() {
           </TableContainer>
         </Grid>
         <Grid item xs={4}>
-          <Paper sx={{ padding: 2 }}>
+          {/* <Paper sx={{ padding: 2 }}>
             <VictoryChart domainPadding={20} theme={VictoryTheme.material}>
               <VictoryAxis
                 tickValues={[1, 2, 3, 4, 5, 6]}
@@ -211,7 +211,7 @@ function Home() {
                 <VictoryBar data={data2015} x="month" y="earnings" />
               </VictoryStack>
             </VictoryChart>
-          </Paper>
+          </Paper> */}
         </Grid>
       </Grid>
       {/* ============================================= */}
